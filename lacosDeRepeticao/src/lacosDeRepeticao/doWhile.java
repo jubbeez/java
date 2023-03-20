@@ -14,6 +14,7 @@ public class doWhile {
 			num = leia.nextInt();
 			if(num>0) {
 				x+=num;
+				//x=x+num;
 			}
 		}while(num != 0);
 			System.out.print("A soma dos números positivos é: "+x);
