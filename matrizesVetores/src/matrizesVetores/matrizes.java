@@ -3,24 +3,56 @@ package matrizesVetores;
 import java.util.Scanner;
 
 public class matrizes {
-	public static void main(String[] args) {
-		int [][] matriz =  new int[3][3];
-		int linha,coluna,somaDiagonalPrinc=0,somaDiagonalSec=0;
-		
-		Scanner leia = new Scanner(System.in);
-		
-		for(linha=0;linha<3;linha++) {
-			for(coluna=0;coluna<3;coluna++) {
-				System.out.println("Entre com um número: ");
-				matriz[linha][coluna]=leia.nextInt();
-				somaDiagonalPrinc += matriz[linha][coluna];
-				somaDiagonalSec += matriz[coluna][linha];
-			}if(linha==coluna) {
-				somaDiagonalPrinc += matriz[linha][coluna];
-				somaDiagonalSec += matriz[coluna][linha];
-			}
-			}
-		System.out.println("Soma dos valores da matriz principal: "+somaDiagonalPrinc);
-		System.out.println("Soma dos valores da matriz secundária: "+somaDiagonalSec);
-	}
+		    public static void main(String[] args) {
+		        // Inicializa a matriz com zeros
+		        int[][] matriz = new int[3][3];
+
+		        // Cria um scanner para ler a entrada do usuário
+		        Scanner sc = new Scanner(System.in);
+
+		        // Lê os valores da matriz
+		        for (int i = 0; i < 3; i++) {
+		            for (int j = 0; j < 3; j++) {
+		                System.out.printf("Digite o valor da posição [%d][%d]: ", i, j);
+		                matriz[i][j] = sc.nextInt();
+		            }
+		        }
+
+		        // Mostra a matriz na tela
+		        System.out.println("Matriz lida:");
+		        for (int i = 0; i < 3; i++) {
+		            for (int j = 0; j < 3; j++) {
+		                System.out.print(matriz[i][j] + " ");
+		            }
+		            System.out.println();
+		        }
+
+		        // Mostra os elementos da diagonal principal
+		        System.out.println("Elementos da diagonal principal:");
+		        for (int i = 0; i < 3; i++) {
+		            System.out.println(matriz[i][i]);
+		        }
+
+		        // Mostra os elementos da diagonal secundária
+		        System.out.println("Elementos da diagonal secundária:");
+		        for (int i = 0; i < 3; i++) {
+		            System.out.println(matriz[i][2 - i]);
+		        }
+
+		        // Calcula a soma dos elementos da diagonal principal
+		        int somaDiagonalPrincipal = 0;
+		        for (int i = 0; i < 3; i++) {
+		            somaDiagonalPrincipal += matriz[i][i];
+		        }
+		        System.out.println("Soma da diagonal principal: " + somaDiagonalPrincipal);
+
+		        // Calcula a soma dos elementos da diagonal secundária
+		        int somaDiagonalSecundaria = 0;
+		        for (int i = 0; i < 3; i++) {
+		            somaDiagonalSecundaria += matriz[i][2 - i];
+		        }
+		        
+		        System.out.println("Soma da diagonal secundária: " + somaDiagonalSecundaria);
+		        
+		    }
 }
