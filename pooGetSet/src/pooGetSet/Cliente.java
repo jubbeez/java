@@ -3,11 +3,19 @@ package pooGetSet;
 public class Cliente {
 	public String nome;
 	public int rg;
-	public int cpf;
 	public String endereco;
 	public int idade;
 	
 	
+	public Cliente(String nome, int rg, String endereco, int idade) {
+		this.nome = nome;
+		this.rg = rg;
+		this.endereco = endereco;
+		this.idade = idade;
+	}
+	public Cliente() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -19,12 +27,6 @@ public class Cliente {
 	}
 	public void setRg(int rg) {
 		this.rg = rg;
-	}
-	public int getCpf() {
-		return cpf;
-	}
-	public void setCpf(int cpf) {
-		this.cpf = cpf;
 	}
 	public String getEndereco() {
 		return endereco;
@@ -42,7 +44,6 @@ public class Cliente {
 	public void visualizar() {
 		System.out.println("Nome: " + getNome());
 		System.out.println("Rg: " + getRg());
-		System.out.println("Cpf: " + getCpf());
 		System.out.println("Endereço: " + getEndereco());
 		System.out.println("Idade: " + getIdade());
 		System.out.println();
